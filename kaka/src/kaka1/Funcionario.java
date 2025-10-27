@@ -1,3 +1,4 @@
+package kaka1;
 
 public class Funcionario extends Pessoa {
 
