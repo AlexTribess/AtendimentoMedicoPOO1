@@ -18,5 +18,4 @@ public class Historico {
 	public void setNaoatendido(Triagem naoatendido) {
 		this.naoatendido = naoatendido;
 	}
-
 }

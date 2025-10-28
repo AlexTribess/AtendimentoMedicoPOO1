@@ -1,5 +1,5 @@
-import java.time.LocalDateTime;
 import java.util.List;
+import java.time.LocalDateTime;
 
 public class Triagem {
 
@@ -49,33 +49,54 @@ public class Triagem {
 		this.historicoAtendimento = historicoAtendimento;
 	}
 
-	public void definirClassificacao(List<String> respostas) {
-        
-        
-        if (respostas == null || respostas.isEmpty()) {
-            System.err.println("Erro na Triagem: Respostas não fornecidas.");
-            return;
-        }
-        this.paciente.setPerguntas(respostas);
+	public String definirClassificacao() {
+		enfermeiro = this.getEnfermeiro();
+		List<String> respostas = enfermeiro.atenderPaciente();
 
-        
-        Classificacao novoNivel = new Classificacao();
-        
-        
-        novoNivel.classificarCliente(respostas); 
+		//calcula pontos para classificar
+		int pontos = 0;
+		//se maior de idade
+		if(this.getPaciente().calcularIdade() < 18) {
+			pontos += 1;
+		}
 
-        
-        this.classificacao = novoNivel;
-        this.paciente.setNivel(novoNivel);
-        
-        
-        this.horarioTriagem = LocalDateTime.now();
-        
-        System.out.println("--- Triagem Concluída ---");
-        System.out.println("Paciente: " + this.paciente.getNome());
-        System.out.println("Enfermeiro: " + this.enfermeiro.getNome());
-        System.out.println("Classificação: " + novoNivel.getCor() + " - " + novoNivel.getDescricao());
-        System.out.println("Hora: " + this.horarioTriagem.toLocalTime());
-    }
-	
+		//se dor maior que 4
+		if(Integer.parseInt(respostas.get(0)) >= 5) {
+			pontos += 1;
+		}
+
+		//se teve febre, calafrios, tosse ou falta de ar
+		if(respostas.get(1).equalsIgnoreCase("sim")) {
+			pontos += 1;
+		}
+
+		// se teve teve sangramentos ou outras perdas de sangue
+		if(respostas.get(2).equalsIgnoreCase("sim")) {
+			pontos += 1;
+		}
+
+		// se os sintomas começaram a mais de 4 dias
+		if(Integer.parseInt(respostas.get(3)) >= 5) {
+			pontos += 1;
+		}
+		String classificacao="";
+		switch (pontos) {
+			case 0:
+				classificacao = "não urgente";
+				break;
+			case 1:
+				classificacao = "pouco urgente";
+				break;
+			case 2:
+			case 3:
+				classificacao = "urgente";
+				break;
+			case 4:
+			case 5:
+				classificacao = "emergencia";
+				break;
+		}
+		
+		return classificacao;
+	}
 }

@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Funcionario extends Pessoa {
 
 	private int id;
@@ -22,14 +26,26 @@ public class Funcionario extends Pessoa {
 		this.funcao = funcao;
 	}
 	
-	public Atendimento iniciarNovoAtendimento(Fila fila) {
-	    
-	    Paciente paciente = fila.chamarProximo();
-	    
-	    Atendimento novoAtendimento = new Atendimento();
-	    novoAtendimento.iniciarAtendimento(paciente, this);
-	    
-	    return novoAtendimento;
+	public List<String> atenderPaciente(){
+		Scanner input = new Scanner(System.in);
+
+		List<String> respostas = new ArrayList<>();
+
+		System.out.println("De 0 a 10, qual o nivel da sua dor?");
+		respostas.add(input.nextLine());
+
+		System.out.println("Você teve febre, calafrios, tosse ou falta de ar?");
+	    respostas.add(input.nextLine());
+
+		System.out.println("Você teve sangramentos ou outras perdas de sangue?");
+		respostas.add(input.nextLine());
+
+		System.out.println("Há quantos dias os sintomas começaram?");
+		respostas.add(input.nextLine());
+
+		input.close();
+		return respostas;
+		
+		
 	}
-	
 }

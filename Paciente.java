@@ -32,12 +32,5 @@ public class Paciente extends Pessoa {
 		this.perguntas = perguntas;
 	}
 	
-	public int getPrioridadeNumerica() {
-        
-        if (this.nivel == null) {
-            return 5; 
-        }
-        return this.nivel.getPrioridadeNumerica(); 
-    }
 	
 }

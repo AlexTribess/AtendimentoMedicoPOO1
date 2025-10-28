@@ -1,6 +1,6 @@
-
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import java.time.Period;
+
 
 public class Pessoa {
 
@@ -8,8 +8,6 @@ public class Pessoa {
 	private String nome;
 	private LocalDate dataNascimento;
 	private String cpf;
-	
-	
 	
 	public int getId() {
 		return id;
@@ -37,13 +35,13 @@ public class Pessoa {
 		if(cpf.length() == 14)
 		this.cpf = cpf;
 	}
-	
-	
-	public int calcularIdade(LocalDate dataNascimento) {
-	
-		LocalDate hoje = LocalDate.now();
-		long idade = ChronoUnit.YEARS.between(dataNascimento, hoje);
-		return (int) idade;
+
+	public int calcularIdade() {
+		Period periodo = Period.between(dataNascimento, LocalDate.now());
+
+		int anos = periodo.getYears();
+
+		return anos;
 	}
 	
 }
