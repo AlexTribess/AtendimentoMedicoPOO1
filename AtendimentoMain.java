@@ -1,5 +1,3 @@
-package kaka1;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

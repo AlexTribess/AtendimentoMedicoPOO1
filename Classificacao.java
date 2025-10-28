@@ -1,5 +1,3 @@
-package kaka1;
-
 import java.time.Duration;
 
 public class Classificacao {
