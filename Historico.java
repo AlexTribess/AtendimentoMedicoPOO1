@@ -21,4 +21,15 @@ public class Historico {
 		this.naoatendido = naoatendido;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Historico [antedidos=");
+		builder.append(antedidos);
+		builder.append(", naoatendido=");
+		builder.append(naoatendido);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }

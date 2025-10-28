@@ -1,5 +1,8 @@
 package kaka1;
+
 import java.time.LocalDate;
+import java.time.Period;
+
 
 public class Pessoa {
 
@@ -7,8 +10,6 @@ public class Pessoa {
 	private String nome;
 	private LocalDate dataNascimento;
 	private String cpf;
-	
-	
 	
 	public int getId() {
 		return id;
@@ -36,6 +37,29 @@ public class Pessoa {
 		if(cpf.length() == 14)
 		this.cpf = cpf;
 	}
+
+	public int calcularIdade() {
+		Period periodo = Period.between(dataNascimento, LocalDate.now());
+
+		int anos = periodo.getYears();
+
+		return anos;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pessoa [id=");
+		builder.append(id);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", dataNascimento=");
+		builder.append(dataNascimento);
+		builder.append(", cpf=");
+		builder.append(cpf);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 	
 	
 }

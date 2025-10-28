@@ -1,4 +1,5 @@
 package kaka1;
+
 import java.time.Duration;
 
 public class Classificacao {
@@ -37,4 +38,19 @@ public class Classificacao {
 	public void setTempoEspera(Duration tempoEspera) {
 		this.tempoEspera = tempoEspera;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Classificacao [cor=");
+		builder.append(cor);
+		builder.append(", descricao=");
+		builder.append(descricao);
+		builder.append(", tempoEspera=");
+		builder.append(tempoEspera);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }

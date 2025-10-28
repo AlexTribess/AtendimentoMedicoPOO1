@@ -1,4 +1,5 @@
 package kaka1;
+
 import java.util.List;
 
 public class Paciente extends Pessoa {
@@ -31,6 +32,19 @@ public class Paciente extends Pessoa {
 	}
 	public void setPerguntas(List<String> perguntas) {
 		this.perguntas = perguntas;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Paciente [id=");
+		builder.append(id);
+		builder.append(", nivel=");
+		builder.append(nivel);
+		builder.append(", perguntas=");
+		builder.append(perguntas);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	
