@@ -25,6 +25,14 @@ public class Fila {
 		this.pacientes = pacientes;
 	}
 	
+	public void adicionarPaciente(Paciente paciente){
+		pacientes.add(paciente);	
+		return true;
+	}
 	
-	
+	public void chamarProximo() {
+		paciente = pacientes.getFirst();	
+		System.out.println("Atendimento de " + paciente);
+		return true;
+	}
 }
