@@ -43,5 +43,21 @@ public class Pessoa {
 
 		return anos;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pessoa [id=");
+		builder.append(id);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", dataNascimento=");
+		builder.append(dataNascimento);
+		builder.append(", cpf=");
+		builder.append(cpf);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 	
 }

@@ -2,6 +2,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Funcionario extends Pessoa {
 
 	private int id;
@@ -43,9 +47,21 @@ public class Funcionario extends Pessoa {
 		System.out.println("Há quantos dias os sintomas começaram?");
 		respostas.add(input.nextLine());
 
+		
 		input.close();
 		return respostas;
 		
-		
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Funcionario [id=");
+		builder.append(id);
+		builder.append(", funcao=");
+		builder.append(funcao);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }

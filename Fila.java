@@ -1,4 +1,3 @@
-
 import java.util.List;
 
 public class Fila {
@@ -34,4 +33,16 @@ public class Fila {
 		System.out.println("Atendimento de " + paciente);
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Fila [id=");
+		builder.append(id);
+		builder.append(", pacientes=");
+		builder.append(pacientes);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }

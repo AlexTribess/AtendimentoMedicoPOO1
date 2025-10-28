@@ -29,7 +29,18 @@ public class Funcao {
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Funcao [id=");
+		builder.append(id);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", especialidade=");
+		builder.append(especialidade);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }
