@@ -1,4 +1,4 @@
-package kaka1;
+
 import java.util.List;
 
 public class Fila {
@@ -7,7 +7,6 @@ public class Fila {
 	private List<Paciente> pacientes;
 		
 	public Fila(int id, List<Paciente> pacientes) {
-		super();
 		this.id = id;
 		this.pacientes = pacientes;
 	}
@@ -25,13 +24,13 @@ public class Fila {
 		this.pacientes = pacientes;
 	}
 	
-	public void adicionarPaciente(Paciente paciente){
+	public boolean adicionarPaciente(Paciente paciente){
 		pacientes.add(paciente);	
 		return true;
 	}
 	
-	public void chamarProximo() {
-		paciente = pacientes.getFirst();	
+	public boolean chamarProximo() {
+		Paciente paciente = pacientes.getFirst();	
 		System.out.println("Atendimento de " + paciente);
 		return true;
 	}

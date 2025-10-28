@@ -1,4 +1,3 @@
-package kaka1;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class Funcionario extends Pessoa {
 		this.funcao = funcao;
 	}
 	
-	public void atenderPaciente(){
+	public List<String> atenderPaciente(){
 		Scanner input = new Scanner(System.in);
 
 		List<String> respostas = new ArrayList<>();
@@ -44,8 +43,9 @@ public class Funcionario extends Pessoa {
 		System.out.println("Há quantos dias os sintomas começaram?");
 		respostas.add(input.nextLine());
 
+		input.close();
 		return respostas;
 		
-		input.close();
+		
 	}
 }

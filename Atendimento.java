@@ -1,5 +1,3 @@
-package kaka1;
-
 public class Atendimento{
 
 	private int id;

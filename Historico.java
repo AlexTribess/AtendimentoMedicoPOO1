@@ -1,5 +1,3 @@
-package kaka1;
-
 public class Historico {
 
 	private Atendimento antedidos;
